@@ -7,13 +7,27 @@ body {
 	background-color: #24272E;
 	width: 50%;
 	margin: 5% auto;
-	padding: 20px 40px;
+	padding: 20px 20px;
 	border-radius: 30px;
 }
 
-#buttonBox {
+.flexbox {
 	display: flex;
 	justify-content: flex-start;
+}
+
+
+.inverted {
+	filter: invert(1);
+}
+
+.icon {
+	width: 30px;
+	height: 30px;
+}
+
+#text-box {
+	margin-left: 10px;
 }
 
 button {
@@ -22,7 +36,13 @@ button {
 	border-radius: 10px;
 	background-color: #2D3039;
 	border: none;
-	margin-right: 20px;
+	margin: 5px;
+}
+
+.button-box {
+	display: flex;
+	flex-direction: vertical;
+	justify-content: space-between;
 }
 
 h1 {
