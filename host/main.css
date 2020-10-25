@@ -6,9 +6,11 @@ body {
 #content {
 	background-color: #24272E;
 	width: 50%;
-	margin: 5% auto;
+	margin: 50px auto;
 	padding: 20px 20px;
 	border-radius: 30px;
+	min-width: 380px;
+	max-width: 600px;
 }
 
 .flexbox {
@@ -26,6 +28,10 @@ body {
 	height: 30px;
 }
 
+button:hover {
+	filter: invert(1);
+}
+
 #text-box {
 	margin-left: 10px;
 }
@@ -37,6 +43,7 @@ button {
 	background-color: #2D3039;
 	border: none;
 	margin: 5px;
+	outline: none;
 }
 
 .button-box {
