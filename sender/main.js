@@ -31,16 +31,13 @@ function onSuccess(message) {
   console.log('onSuccess: ' + JSON.stringify(message));
 
   if (message['type'] == 'load') {
-    $('#kill').prop('disabled', false);
-    $('#post-note').show();
+  	document.querySelector('#cast-note').style = 'display: block';
   }
 }
 
 function onStopAppSuccess() {
-  console.log('onStopAppSuccess');
-
-  $('#kill').prop('disabled', true);
-  $('#post-note').hide();
+	console.log('onStopAppSuccess');
+	document.querySelector('#cast-note').style = 'display: none';
 }
 
 function sessionListener(e) {
@@ -81,25 +78,7 @@ function connect() {
   console.log('connect()');
   sendMessage({
     type: 'load',
-    url: $('#url').val(),
-    refresh: $('#refresh').val(),
+    url: 'http://www.gabenewell.org/',
+    refresh: '',
   });
 }
-
-$('#kill').on('click', stopApp);
-
-// Populate input fields from query params
-$(function () {
-  if (!'URLSearchParams' in window) {
-    return;
-  }
-
-  var params = new URLSearchParams(window.location.search);
-  if (params.has('url')) {
-    $('#url').val(params.get('url'));
-  }
-
-  if (params.has('refresh')) {
-    $('#refresh').val(params.get('refresh'));
-  }
-});

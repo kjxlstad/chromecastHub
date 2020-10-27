@@ -28,30 +28,11 @@ window.onload = function() {
     console.log('Message [' + event.senderId + ']: ' + event.data);
 
     if (event.data['type'] == 'load') {
-      $('#dashboard').attr('src', event.data['url']);
-      if (event.data['refresh'] > 0) {
-        $('#dashboard').attr('data-refresh', event.data['refresh'] * 1000);
-        setTimeout(reloadDashboard, $('#dashboard').attr('data-refresh'));
-      }
-      else {
-        $('#dashboard').attr('data-refresh', 0);
-      }
+      document.querySelector('#test').innerHTML = 'working'
     }
   }
 
   // Initialize the CastReceiverManager with an application status message.
   window.castReceiverManager.start({statusText: 'Application is starting'});
-  console.log('Receiver Manager started');
-
-  function reloadDashboard() {
-    $('#dashboard').attr('src', $('#dashboard').attr('src'));
-    if ($('#dashboard').attr('data-refresh')) {
-      setTimeout(reloadDashboard, $('#dashboard').attr('data-refresh'));
-    }
-  }
-
-  $('#dashboard').load(function() {
-    $('#loading').hide();
-    console.log('Loading animation hidden.');
-  });
+  console.log('Receiver Manager started'); 
 };
