@@ -8,15 +8,15 @@ window.onload = function() {
 
   castReceiverManager.onReady = function(event) {
     console.log("Received Ready event: " + (JSON.stringify(event.data)));
-    return window.castReceiverManager.setApplicationState('chromecast is ready...');
+    window.castReceiverManager.setApplicationState('chromecast is ready...');
   };
 
   castReceiverManager.onSenderConnected = function(event) {
-    return console.log("Received Sender Connected event: " + event.senderId);
+    console.log("Received Sender Connected event: " + event.senderId);
   };
 
   castReceiverManager.onSenderDisconnected = function(event) {
-    return console.log("Received Sender Disconnected event: " + event.senderId);
+    console.log("Received Sender Disconnected event: " + event.senderId);
   };
 
   window.messageBus = window.castReceiverManager.getCastMessageBus('urn:x-cast:io.github.kjxlstad', cast.receiver.CastMessageBus.MessageType.JSON);
@@ -25,12 +25,12 @@ window.onload = function() {
     console.log("Message [" + event.senderId + "]: " + event.data);
 
     if (event.data['type'] === 'load') {
-      return (document.querySelector('#test')).innerHTML = 'actually working';
+      (document.querySelector('#test')).innerHTML = 'actually working';
     }
   };
 
   window.castReceivedManager.start({
     statusText: 'Application is starting'
   });
-  return console.log('Receiver Manager started');
+  console.log('Receiver Manager started');
 };
