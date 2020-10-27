@@ -1,4 +1,5 @@
-applicationID = 'F7FD2183'
+applicationID = '18745296'
+namespace = 'urn:x-cast:io.github.kjxlstad'
 session = null
 
 if (!chrome.cast || !chrome.cast.isAvailable)
@@ -40,8 +41,8 @@ sendMessage = (message) ->
 		session.sendMessage namespace, message, (onSuccess.bind this, message), onError
 	else
 		chrome.cast.requestSession (e) ->
-			sessoin = e
-			sessionsListener e
+			session = e
+			sessionListener e
 			session.sendMessage namespace, message, (onSuccess.bind this, message), onError
 		, onError
 
@@ -53,7 +54,8 @@ connect = () ->
 	console.log 'connect()'
 	sendMessage
 		type: 'load'
-		url: 'https://gabenewell.com' 
+		url: 'https://gabenewell.com'
+		refresh: 'test'
 
 
 
