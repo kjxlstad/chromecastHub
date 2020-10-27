@@ -1,5 +1,5 @@
-applicationID = '18745296'
-namespace = 'urn:x-cast:me.enra'
+applicationID = '55B4F0B8'
+namespace = 'urn:x-cast:io.github.kjxlstad'
 session = null
 
 if !chrome.cast
@@ -13,7 +13,7 @@ initializeCastApi = () ->
 	chrome.cast.initialize apiConfig, onInitSuccess, onError
 
 onInitSuccess = () -> console.log 'onInitSuccess'
-onError = (onError) -> console.log 'onError: ' + JSON.stringify message
+onError = (message) -> console.log 'onError: ' + JSON.stringify message
 onSuccess = (message) ->
 	console.log 'onSucsess: ' + JSON.stringify message
 	if message['type'] == 'load'
@@ -22,7 +22,6 @@ onSuccess = (message) ->
 
 onStopAppSuccess = () ->
 	console.log 'onStopAppSuccess'
-	(document.querySelector '#kill').enabled = true
 	(document.querySelector '#cast-note').style = 'display: none'
 
 sessionListener = (e) ->

@@ -4,7 +4,7 @@ window.onload = function() {
   castReceiverManager.onReady = function(event) {
     return window.castReceiverManager.setApplicationState('cast is ready');
   };
-  window.messageBus = window.castReceiverManager.getCastMessageBus('urn:x-cast:io', cast.receiver.CastMessageBus.MessageType.JSON);
+  window.messageBus = window.castReceiverManager.getCastMessageBus('urn:x-cast:io.github.kjxlstad', cast.receiver.CastMessageBus.MessageType.JSON);
   window.messageBus = event.data['type'] === 'load' ? (document.querySelector('#test')).innerHTML = 'working' : void 0;
   return window.castReceiverManager.start({
     statusText: 'Application is starting'
