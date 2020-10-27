@@ -3,7 +3,7 @@ var applicationID, connect, initializeCastApi, namespace, onError, onInitSuccess
 
 applicationID = '18745296';
 
-namespace = 'urn:x-cast:io.github.kjxlstad';
+namespace = 'urn:x-cast:me.enra';
 
 session = null;
 
@@ -79,7 +79,7 @@ connect = function() {
   console.log('connect()');
   return sendMessage({
     type: 'load',
-    url: 'https://kjxlstad.github.io/chromecastHub/receiver',
+    url: 'https://kjxlstad.git',
     refresh: 'test'
   });
 };

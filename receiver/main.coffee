@@ -5,7 +5,7 @@ window.onload = () ->
 		window.castReceiverManager.setApplicationState 'cast is ready'
 
 	window.messageBus =
-		window.castReceiverManager.getCastMessageBus 'urn:x-cast:io.github.kjxlstad', cast.receiver.CastMessageBus.MessageType.JSON
+		window.castReceiverManager.getCastMessageBus 'urn:x-cast:me.enra', cast.receiver.CastMessageBus.MessageType.JSON
 	window.messageBus =
 		if event.data['type'] == 'load'
 			(document.querySelector '#test').innerHTML = 'working'
