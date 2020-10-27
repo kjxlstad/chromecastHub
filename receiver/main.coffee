@@ -15,8 +15,10 @@ window.onload = () ->
 	window.messageBus =
 		window.castReceiverManager.getCastMessageBus 'urn:x-cast:io.github.kjxlstad', cast.receiver.CastMessageBus.MessageType.JSON
 	window.messageBus.onMessage = (event) ->
+		console.log "Message [#{event.senderId}]: #{event.data}"
+
 		if event.data['type'] == 'load'
 			(document.querySelector '#test').innerHTML = 'working'
 
-	window.castReceiverManager.start {statusText: 'Application is starting'}
+	window.castReceiverManager.start (statusText: 'Application is starting')
 	console.log 'Receiever Manager started'
