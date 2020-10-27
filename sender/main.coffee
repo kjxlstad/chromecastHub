@@ -13,7 +13,7 @@ initializeCastApi = () ->
 	chrome.cast.initialize apiConfig, onInitSuccess, onError
 
 onInitSuccess = () -> console.log 'onInitSuccess'
-onError = (message) -> console.log 'onError: ' + JSON.stringify message
+onError = (message) -> console.log "onError: #{JSON.stringify message}"
 onSuccess = (message) ->
 	console.log 'onSucsess: ' + JSON.stringify message
 	if message['type'] == 'load'
