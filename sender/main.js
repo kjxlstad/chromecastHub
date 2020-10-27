@@ -31,7 +31,6 @@ onError = function(message) {
 onSuccess = function(message) {
   console.log('onSucsess: ' + JSON.stringify(message));
   if (message['type'] === 'load') {
-    (document.querySelector('#kill')).disabled = false;
     return (document.querySelector('#cast-note')).style = 'display: block';
   }
 };
@@ -49,9 +48,9 @@ sessionListener = function(e) {
 
 sessionUpdateListener = function(isAlive) {
   if (isAlive) {
-    return console.log('Session Updated');
+    return console.log("Session Updated: " + session.sessionId);
   } else {
-    console.log('Session Removed' + ': ' + session.sessionId);
+    console.log("Session Removed:  " + session.sessionId);
     return session = null;
   }
 };

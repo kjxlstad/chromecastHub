@@ -17,7 +17,6 @@ onError = (message) -> console.log 'onError: ' + JSON.stringify message
 onSuccess = (message) ->
 	console.log 'onSucsess: ' + JSON.stringify message
 	if message['type'] == 'load'
-		(document.querySelector '#kill').disabled = false
 		(document.querySelector '#cast-note').style = 'display: block'
 
 onStopAppSuccess = () ->
@@ -31,12 +30,12 @@ sessionListener = (e) ->
 
 sessionUpdateListener = (isAlive) ->
 	if (isAlive)
-		console.log 'Session Updated'
+		console.log "Session Updated: #{session.sessionId}"
 	else
-		console.log 'Session Removed' + ': ' + session.sessionId
+		console.log "Session Removed:  #{session.sessionId}"
 		session = null
 
-receiverListener = () ->
+receiverListener = () -> return
 
 sendMessage = (message) ->
 	if (session != null)
@@ -58,8 +57,3 @@ connect = () ->
 		type: 'load'
 		url: 'https://kjxlstad.git'
 		refresh: 'test'
-
-
-
-
-
