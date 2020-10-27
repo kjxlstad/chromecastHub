@@ -3,7 +3,6 @@
  */
 
 window.onload = function() {
-  cast.receiver.logger.setLevelValue(0);
   window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
   console.log('Starting Receiver Manager');
 
@@ -28,7 +27,7 @@ window.onload = function() {
     console.log('Message [' + event.senderId + ']: ' + event.data);
 
     if (event.data['type'] == 'load') {
-      document.querySelector('#test').innerHTML = 'working'
+      document.querySelector('#test').innerHTML = 'actuall working?'
     }
   }
 

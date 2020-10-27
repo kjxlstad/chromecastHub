@@ -18,7 +18,7 @@ window.onload = () ->
 		console.log "Message [#{event.senderId}]: #{event.data}"
 
 		if event.data['type'] == 'load'
-			(document.querySelector '#test').innerHTML = 'working'
+			(document.querySelector '#test').innerHTML = 'actually working'
 
 	window.castReceiverManager.start (statusText: 'Application is starting')
 	console.log 'Receiever Manager started'

@@ -16,7 +16,7 @@ window.onload = function() {
   window.messageBus.onMessage = function(event) {
     console.log("Message [" + event.senderId + "]: " + event.data);
     if (event.data['type'] === 'load') {
-      return (document.querySelector('#test')).innerHTML = 'working';
+      return (document.querySelector('#test')).innerHTML = 'actually working';
     }
   };
   window.castReceiverManager.start({
