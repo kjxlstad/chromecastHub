@@ -15,7 +15,7 @@ window.onload = function() {
   window.messageBus = window.castReceiverManager.getCastMessageBus('urn:x-cast:io.github.kjxlstad', cast.receiver.CastMessageBus.MessageType.JSON);
   window.messageBus.onMessage = function(event) {
     console.log("Message [" + event.senderId + "]: " + event.data);
-    if (event.data['type'] === 'load') {
+    if (event.data['type'] == 'load') {
       return (document.querySelector('#test')).innerHTML = 'actually working';
     }
   };
