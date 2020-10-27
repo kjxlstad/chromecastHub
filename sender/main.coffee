@@ -1,5 +1,4 @@
-#applicationID = '55B4F0B8'
-applicationID = 'F7FD2183'
+applicationID = '55B4F0B8'
 namespace = 'urn:x-cast:io.github.kjxlstad'
 session = null
 
