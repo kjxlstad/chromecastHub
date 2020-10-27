@@ -39,7 +39,6 @@ sessionUpdateListener = (isAlive) ->
 
 receiverListener = () ->
 
-
 sendMessage = (message) ->
 	if (session != null)
 		session.sendMessage namespace, message, (onSuccess.bind this, message), onError
