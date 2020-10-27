@@ -2,17 +2,18 @@ applicationID = '18745296'
 namespace = 'urn:x-cast:io.github.kjxlstad'
 session = null
 
-if (!chrome.cast || !chrome.cast.isAvailable)
-	setTimeout initializeCastApi, 1000
+if !chrome.cast
+	setTimeout () ->
+		initializeCastApi()
+	, 1000
 
 initializeCastApi = () ->
-	sessionsRequest = new chrome.cast.SessionRequest applicationID
+	sessionRequest = new chrome.cast.SessionRequest applicationID
 	apiConfig = new chrome.cast.ApiConfig sessionRequest, sessionListener, receiverListener
-
 	chrome.cast.initialize apiConfig, onInitSuccess, onError
 
-onInitSucsess = () -> console.log 'onInitSuccess'
-onError = () -> console.log 'onError: ' + JSON.stringify message
+onInitSuccess = () -> console.log 'onInitSuccess'
+onError = (onError) -> console.log 'onError: ' + JSON.stringify message
 onSuccess = (message) ->
 	console.log 'onSucsess: ' + JSON.stringify message
 	if message['type'] == 'load'
@@ -36,6 +37,9 @@ sessionUpdateListener = (isAlive) ->
 		console.log 'Session Removed' + ': ' + session.sessionId
 		session = null
 
+receiverListener = () ->
+
+
 sendMessage = (message) ->
 	if (session != null)
 		session.sendMessage namespace, message, (onSuccess.bind this, message), onError
@@ -54,7 +58,7 @@ connect = () ->
 	console.log 'connect()'
 	sendMessage
 		type: 'load'
-		url: 'https://gabenewell.com'
+		url: 'https://kjxlstad.github.io/chromecastHub/receiver'
 		refresh: 'test'
 
 
