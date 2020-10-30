@@ -3,39 +3,42 @@ body {
 	font-family: 'Montserrat';
 }
 
-.flexbox-vertical {
-	display: flex;
-	flex-direction: column;
+.proportional {
+	position: relative;
+	width: 100%;
+	padding-bottom: 50%;
+	float: left;
+	height: 0;
 }
 
-.flexbox-horizontal {
-	display: flex;
-	flex-direction: row;
+.grid-box {
+	display: grid;
+	grid-template-areas:
+		'single0 single1 quad quad'
+		'double double quad quad';
+	grid-gap: 20px;
+	
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
 }
+
+.grid-box > div {
+	background-color: #24272E;;
+	border-radius: 30px;
+	width: 100%;
+	height: 100%;
+}
+
+.single0 {grid-area: single0;}
+.single1 {grid-area: single1;}
+.double {grid-area: double;}
+.wallpaper {grid-area: quad;}
 
 .wallpaper {
 	background: url("https://github.com/kjxlstad/androidHomescreen/blob/master/wallpapers/5.png?raw=true");
 	background-size: cover;
-}
-
-.box {
-	background-color: #24272E;
-	margin: 20px;
-	border-radius: 30px;
-}
-.s1u {
-	width: 180px;
-	height: 180px;
-}
-
-.s2u {
-	width: 400px;
-	height: 180px;
-}
-
-.s4u {
-	width: 400px;
-	height: 400px;
 }
 
 p {
