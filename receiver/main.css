@@ -3,6 +3,24 @@ body {
 	font-family: 'Montserrat';
 }
 
+.flexbox-vertical {
+	display: flex;
+	flex-direction: column;
+}
+
+.flexbox-horizontal {
+	display: flex;
+	flex-direction: row;
+}
+
+.square {
+	background-color: #24272E;
+	width: 200px;
+	height: 200px;
+	margin: 20px;
+	border-radius: 30px;
+}
+
 p {
 	color: #f1f1f1aa;
 	font-size: 14px;
