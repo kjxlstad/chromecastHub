@@ -1,6 +1,7 @@
 body {
 	background-color: #1b1e23;
 	font-family: 'Montserrat';
+	margin: 20px;
 }
 
 .proportional {
@@ -34,11 +35,22 @@ body {
 .single0 {grid-area: single0;}
 .single1 {grid-area: single1;}
 .double {grid-area: double;}
-.wallpaper {grid-area: quad;}
 
 .wallpaper {
+	grid-area: quad;
 	background: url("https://github.com/kjxlstad/androidHomescreen/blob/master/wallpapers/5.png?raw=true");
 	background-size: cover;
+}
+
+.title {
+	display: flex;
+	justify-content: space-between;
+}
+
+h1 {
+	color: #F1F1F1;
+	font-size: 22px;
+	font-weight: bold;
 }
 
 p {
