@@ -13,12 +13,29 @@ body {
 	flex-direction: row;
 }
 
-.square {
+.wallpaper {
+	background: url("https://github.com/kjxlstad/androidHomescreen/blob/master/wallpapers/5.png?raw=true");
+	background-size: cover;
+}
+
+.box {
 	background-color: #24272E;
-	width: 200px;
-	height: 200px;
 	margin: 20px;
 	border-radius: 30px;
+}
+.s1u {
+	width: 230px;
+	height: 230px;
+}
+
+.s2u {
+	width: 500px;
+	height: 230px;
+}
+
+.s4u {
+	width: 500px;
+	height: 500px;
 }
 
 p {
